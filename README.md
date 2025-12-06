@@ -89,8 +89,11 @@ The script will:
 - **[CUDA Tile Main Page](https://developer.nvidia.com/cuda/tile)**  
   Official NVIDIA CUDA Tile landing page
 
-- **[CuTile Python Quickstart Guide](https://docs.nvidia.com/cuda/cutile-python/quickstart.html)**  
+- **[cuTile Python Quickstart Guide](https://docs.nvidia.com/cuda/cutile-python/quickstart.html)**  
   Step-by-step introduction to using CUDA Tile with Python
+
+- **[Other cuTile Samples](https://github.com/NVIDIA/cutile-python/tree/main/samples)**  
+  Other official cuTile samples
 
 ### CUDA Toolkit
 

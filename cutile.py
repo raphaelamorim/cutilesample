@@ -30,8 +30,8 @@ def vector_add(a, b, c, tile_size: ct.Constant[int]):
 
 def test():
     # Create input data
-    vector_size = 2**12
-    tile_size = 2**4
+    vector_size = 2**20
+    tile_size = 2**10
     grid = (ct.cdiv(vector_size, tile_size), 1, 1)
 
     a = cp.random.uniform(-1, 1, vector_size)

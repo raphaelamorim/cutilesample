@@ -18,8 +18,6 @@ RUN apt-get -y install cuda-drivers
 # Set working directory
 WORKDIR /app
 
-COPY cutile.py .
-
 # Create virtual env
 RUN python3.12 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
@@ -28,7 +26,11 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --upgrade pip
 
 # Install PyTorch + CUDA
-RUN pip install cupy-cuda13x nvidia-cuda-tileiras cuda-tile pytest numpy
+RUN pip install torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+RUN pip install cupy-cuda13x nvidia-cuda-tileiras cuda-tile pytest numpy 
 
+COPY cutile.py .
+COPY matmul.py .
+COPY runsamples.sh .
 # Clone cutile sample
-ENTRYPOINT ["python", "/app/cutile.py"]
+ENTRYPOINT ["sh", "/app/runsamples.sh"]
